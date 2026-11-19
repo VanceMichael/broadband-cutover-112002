@@ -1,0 +1,46 @@
+[
+  {
+    "record": "station-1",
+    "availableFrom": 1,
+    "kind": "equipment",
+    "payload": {
+      "station": "站A",
+      "equipment": "E1",
+      "enabled": true,
+      "effective": "10:00"
+    }
+  },
+  {
+    "record": "station-2",
+    "availableFrom": 1,
+    "kind": "equipment",
+    "payload": {
+      "station": "站B",
+      "equipment": "E1",
+      "enabled": false,
+      "effective": "10:00"
+    }
+  },
+  {
+    "record": "station-3",
+    "availableFrom": 2,
+    "kind": "equipment",
+    "payload": {
+      "station": "站A",
+      "equipment": "E2",
+      "enabled": true,
+      "effective": "10:10"
+    }
+  },
+  {
+    "record": "station-4",
+    "availableFrom": 4,
+    "kind": "closure",
+    "payload": {
+      "edge": "G2",
+      "effective": "10:19",
+      "until": "11:00",
+      "rendezvous": "换乘岗"
+    }
+  }
+]

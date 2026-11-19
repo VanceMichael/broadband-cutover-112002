@@ -1,0 +1,50 @@
+[
+  {
+    "record": "survey-1",
+    "availableFrom": 1,
+    "kind": "corridor",
+    "payload": {
+      "id": "G1",
+      "from": "站A-台1",
+      "to": "换乘岗",
+      "minutes": 3,
+      "equipment": "站A/E1"
+    }
+  },
+  {
+    "record": "survey-2",
+    "availableFrom": 1,
+    "kind": "corridor",
+    "payload": {
+      "id": "G2",
+      "from": "换乘岗",
+      "to": "车B-闸",
+      "minutes": 4,
+      "staff": "P1"
+    }
+  },
+  {
+    "record": "survey-3",
+    "availableFrom": 2,
+    "kind": "corridor",
+    "payload": {
+      "id": "G3",
+      "from": "站A-台2",
+      "to": "避让台",
+      "minutes": 3,
+      "equipment": "站A/E2"
+    }
+  },
+  {
+    "record": "survey-4",
+    "availableFrom": 2,
+    "kind": "corridor",
+    "payload": {
+      "id": "G4",
+      "from": "避让台",
+      "to": "车B-闸",
+      "minutes": 4,
+      "staff": "P1"
+    }
+  }
+]

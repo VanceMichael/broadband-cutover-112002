@@ -1,0 +1,71 @@
+[
+  {
+    "record": "assistance-1",
+    "availableFrom": 1,
+    "kind": "request",
+    "payload": {
+      "traveller": "P7",
+      "ready": "10:15",
+      "start": "站A-台1",
+      "target": "车B-闸",
+      "gateCloses": "10:26",
+      "need": "轮椅"
+    }
+  },
+  {
+    "record": "assistance-2",
+    "availableFrom": 1,
+    "kind": "staff",
+    "payload": {
+      "location": "P1",
+      "staff": "值-13",
+      "window": [
+        "10:15",
+        "10:29"
+      ]
+    }
+  },
+  {
+    "record": "assistance-3",
+    "availableFrom": 2,
+    "kind": "accept",
+    "payload": {
+      "traveller": "P7",
+      "id": "H5",
+      "staff": "值-13",
+      "busy": [
+        "10:18",
+        "10:22"
+      ],
+      "path": [
+        "G1",
+        "G2"
+      ]
+    }
+  },
+  {
+    "record": "assistance-4",
+    "availableFrom": 3,
+    "kind": "location",
+    "payload": {
+      "traveller": "P7",
+      "id": "H5",
+      "place": "换乘岗",
+      "time": "10:19",
+      "progress": "已接应"
+    }
+  },
+  {
+    "record": "assistance-5",
+    "availableFrom": 3,
+    "kind": "request",
+    "payload": {
+      "traveller": "P8",
+      "ready": "10:18",
+      "start": "站A-台2",
+      "target": "车B-闸",
+      "gateCloses": "10:28",
+      "need": "轮椅"
+    }
+  }
+]
