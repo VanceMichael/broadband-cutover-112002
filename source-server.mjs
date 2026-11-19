@@ -53,7 +53,8 @@ export async function start({ port = 0, host = '127.0.0.1', portal } = {}) {
           r.payload.lines.includes(line)).map((r) => r.payload.interval);
         const records = events.filter((r) => r.kind === 'session' && r.payload.gateway === gateway &&
           r.payload.line === line && r.payload.at >= from && r.payload.at >= floor && r.payload.at < until);
-        sendJson(response, 200, { edge, gateway, line, requested: [from, until], floor, covered, records });
+        const retainMinutes = edge === 'E-原' ? 22 : 35;
+        sendJson(response, 200, { edge, gateway, line, requested: [from, until], floor, retainMinutes, covered, records });
         return;
       }
       if (url.pathname === '/') {
