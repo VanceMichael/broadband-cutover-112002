@@ -1,0 +1,78 @@
+[
+  {
+    "record": "work-1",
+    "availableFrom": 1,
+    "kind": "mapping",
+    "payload": {
+      "service": "村-011",
+      "line": "村网",
+      "gateway": [
+        "谷域",
+        "07"
+      ],
+      "edge": "E-原",
+      "interval": [
+        "00:00",
+        "09:00"
+      ]
+    }
+  },
+  {
+    "record": "work-2",
+    "availableFrom": 2,
+    "kind": "mapping",
+    "payload": {
+      "service": "村-011",
+      "line": "村网",
+      "gateway": [
+        "桥域",
+        "07"
+      ],
+      "edge": "E-备",
+      "interval": [
+        "09:00",
+        "24:00"
+      ],
+      "rev": 1
+    }
+  },
+  {
+    "record": "work-3",
+    "availableFrom": 2,
+    "kind": "mapping",
+    "payload": {
+      "service": "村-012",
+      "line": "办公",
+      "gateway": [
+        "桥域",
+        "07"
+      ],
+      "edge": "E-备",
+      "interval": [
+        "09:00",
+        "24:00"
+      ],
+      "rev": 1
+    }
+  },
+  {
+    "record": "work-4",
+    "availableFrom": 4,
+    "kind": "mapping",
+    "payload": {
+      "service": "村-011",
+      "line": "村网",
+      "gateway": [
+        "谷域",
+        "07"
+      ],
+      "edge": "E-原",
+      "interval": [
+        "09:00",
+        "09:11"
+      ],
+      "rev": 2,
+      "postponed": true
+    }
+  }
+]

@@ -1,4 +1,4 @@
-# 临时换乘通道的跨站可达资料采集的演练来源
+# 共用宽带迁线后的来源覆盖补领的演练来源
 
 这里提供独立来源的本地合成记录，与实际单位、个人和线上业务无关。
 
@@ -12,9 +12,9 @@
 
 | GET 路由 | 来源约定 |
 | --- | --- |
-| `/source/survey` | 通道有方向。minutes 是通行所需的分钟数。equipment、staff 指定需用电梯和岗点。 |
-| `/source/station` | station 标识状态发布站，effective 为状态的本地生效时间，edge 为公告的确切方向。 |
-| `/source/assistance` | 承诺匹配唯一 staff 及带岗点的区间。在途位置事先由接应端确认。 |
+| `/source/station` | edge 表示观测端口，domain 表示设备号作用域。trace 可用来关联单一会话，seq 只在端点内连续。 |
+| `/source/work` | mapping 有生效区间及线路范围，同域设备同时为不同业务保留在不同端。各区间左闭右开。 |
+| `/source/care` | 客服结案按工单和明确业务线回访，关单记录保存采用的时间与覆盖依据。 |
 
 查询参数 `offset` 是从零开始的页偏移，`limit` 默认 3，取值 1 至 100。响应中的 `records` 含 `record` 来源记录键、`availableFrom` 首次出现的回放阶段、`kind` 记录类型、`payload` 业务字段。来源记录键与业务身份分别定义。`next` 为下一页偏移，末页为 `null`。回放阶段中的记录按到达顺序可查。
 

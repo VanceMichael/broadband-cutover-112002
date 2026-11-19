@@ -2,45 +2,74 @@
   {
     "record": "station-1",
     "availableFrom": 1,
-    "kind": "equipment",
+    "kind": "session",
     "payload": {
-      "station": "站A",
-      "equipment": "E1",
-      "enabled": true,
-      "effective": "10:00"
+      "edge": "E-原",
+      "domain": "谷域",
+      "gateway": "07",
+      "seq": 81,
+      "trace": "ZX4",
+      "at": "08:55",
+      "line": "村网"
     }
   },
   {
     "record": "station-2",
-    "availableFrom": 1,
-    "kind": "equipment",
+    "availableFrom": 2,
+    "kind": "session",
     "payload": {
-      "station": "站B",
-      "equipment": "E1",
-      "enabled": false,
-      "effective": "10:00"
+      "edge": "E-备",
+      "domain": "桥域",
+      "gateway": "07",
+      "seq": 11,
+      "trace": "ZX4",
+      "at": "09:01",
+      "line": "村网"
     }
   },
   {
     "record": "station-3",
     "availableFrom": 2,
-    "kind": "equipment",
+    "kind": "session",
     "payload": {
-      "station": "站A",
-      "equipment": "E2",
-      "enabled": true,
-      "effective": "10:10"
+      "edge": "E-备",
+      "domain": "桥域",
+      "gateway": "07",
+      "seq": 12,
+      "trace": null,
+      "at": "09:05",
+      "line": "办公"
     }
   },
   {
     "record": "station-4",
-    "availableFrom": 4,
-    "kind": "closure",
+    "availableFrom": 2,
+    "kind": "coverage",
     "payload": {
-      "edge": "G2",
-      "effective": "10:19",
-      "until": "11:00",
-      "rendezvous": "换乘岗"
+      "edge": "E-备",
+      "gateway": "07",
+      "interval": [
+        "09:00",
+        "09:30"
+      ],
+      "lines": [
+        "村网",
+        "办公"
+      ]
+    }
+  },
+  {
+    "record": "station-5",
+    "availableFrom": 3,
+    "kind": "floor",
+    "payload": {
+      "edge": "E-原",
+      "oldest": "09:10",
+      "oldestSeq": 85,
+      "confirmedLost": [
+        "08:56",
+        "09:10"
+      ]
     }
   }
 ]

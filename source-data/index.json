@@ -1,8 +1,8 @@
 {
   "sources": [
-    "survey",
     "station",
-    "assistance"
+    "work",
+    "care"
   ],
   "stages": 4,
   "originals": [],

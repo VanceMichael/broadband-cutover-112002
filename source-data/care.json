@@ -1,0 +1,77 @@
+[
+  {
+    "record": "care-1",
+    "availableFrom": 1,
+    "kind": "report",
+    "payload": {
+      "ticket": "NW1",
+      "service": "村-011",
+      "line": "村网",
+      "outage": [
+        "09:00",
+        "09:09"
+      ]
+    }
+  },
+  {
+    "record": "care-2",
+    "availableFrom": 2,
+    "kind": "report",
+    "payload": {
+      "ticket": "NW2",
+      "service": "村-012",
+      "line": "办公",
+      "outage": [
+        "09:01",
+        "09:06"
+      ]
+    }
+  },
+  {
+    "record": "care-3",
+    "availableFrom": 2,
+    "kind": "callback",
+    "payload": {
+      "ticket": "NW1",
+      "service": "村-011",
+      "line": "村网",
+      "result": "已复通",
+      "time": "09:09"
+    }
+  },
+  {
+    "record": "care-4",
+    "availableFrom": 2,
+    "kind": "callback",
+    "payload": {
+      "ticket": "NW2",
+      "service": "村-012",
+      "line": "办公",
+      "result": "已复通",
+      "time": "09:07"
+    }
+  },
+  {
+    "record": "care-5",
+    "availableFrom": 3,
+    "kind": "closed",
+    "payload": {
+      "ticket": "NW1",
+      "by": "客服-09",
+      "time": "09:10",
+      "edge": "E-备",
+      "trace": "ZX4"
+    }
+  },
+  {
+    "record": "care-6",
+    "availableFrom": 3,
+    "kind": "closed",
+    "payload": {
+      "ticket": "NW2",
+      "by": "客服-10",
+      "time": "09:12",
+      "edge": "E-备"
+    }
+  }
+]
