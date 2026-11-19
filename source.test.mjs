@@ -54,3 +54,23 @@ test('资料在指定回放阶段从来源完整分页返回', async (t) => {
   assert.equal((await fetch(`${url}/source/missing`)).status, 404);
   t.diagnostic(`${index.sources.length} 处来源、${index.stages} 个阶段、${index.originals.length} 份原件`);
 });
+
+test('定向补领区分原端回卷与备用端声明', async (t) => {
+  const { server, url } = await start();
+  t.after(() => new Promise((resolve) => server.close(resolve)));
+  const at = async (edge, line) => {
+    const params = new URLSearchParams({ edge, gateway:'07', line, from:'08:54', until:'09:12' });
+    const response = await fetch(url + '/session-window?' + params);
+    assert.equal(response.status, 200);
+    return response.json();
+  };
+  assert.equal((await at('E-原','村网')).records[0].payload.seq, 81);
+  await fetch(url + '/control?stage=3', { method: 'POST' });
+  const old = await at('E-原','村网');
+  assert.equal(old.floor, '09:10');
+  assert.deepEqual(old.records, []);
+  const alternate = await at('E-备','村网');
+  assert.deepEqual(alternate.covered, [['09:00','09:30']]);
+  assert.equal(alternate.records[0].payload.trace, 'ZX4');
+  assert.equal((await at('E-备','办公')).records[0].payload.trace, null);
+});

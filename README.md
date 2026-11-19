@@ -19,3 +19,5 @@
 查询参数 `offset` 是从零开始的页偏移，`limit` 默认 3，取值 1 至 100。响应中的 `records` 含 `record` 来源记录键、`availableFrom` 首次出现的回放阶段、`kind` 记录类型、`payload` 业务字段。来源记录键与业务身份分别定义。`next` 为下一页偏移，末页为 `null`。回放阶段中的记录按到达顺序可查。
 
 控制员通过 `POST /control?stage=2` 切换到第 2 阶段，服务会保留更早已可查的记录。每次换阶段后按根路径返回的 `stage` 确认切换成功。
+
+会话来源用 `GET /session-window` 补领指定区间。参数为 `edge`、`gateway`、`line`、`from`、`until`。端点为 E-原 或 E-备，业务为村网或办公，时间为半开区间的 HH:mm。回包携带端点声明的保留边界 `floor`、独立覆盖声明 `covered` 和仍可取到的 `records`。普通来源接口保留的是到达记录回放；`/session-window` 反映该阶段站点还实际可补的数据。

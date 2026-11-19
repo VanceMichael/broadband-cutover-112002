@@ -37,6 +37,25 @@ export async function start({ port = 0, host = '127.0.0.1', portal } = {}) {
         sendJson(response, 405, { error: '来源仅支持读取' });
         return;
       }
+      if (url.pathname === '/session-window') {
+        const names = ['edge', 'gateway', 'line', 'from', 'until'];
+        const [edge, gateway, line, from, until] = names.map((name) => url.searchParams.get(name));
+        const time = /^(?:[01]\d|2[0-4]):[0-5]\d$/;
+        if (!['E-原','E-备'].includes(edge) || gateway !== '07' ||
+            !['村网','办公'].includes(line) || !time.test(from ?? '') ||
+            !time.test(until ?? '') || from >= until) {
+          sendJson(response, 400, { error: '需要完整的端点、设备、业务和请求区间' });
+          return;
+        }
+        const events = sources.get('station').filter((r) => r.availableFrom <= stage && r.payload.edge === edge);
+        const floor = events.findLast((r) => r.kind === 'floor')?.payload.oldest ?? '00:00';
+        const covered = events.filter((r) => r.kind === 'coverage' && r.payload.gateway === gateway &&
+          r.payload.lines.includes(line)).map((r) => r.payload.interval);
+        const records = events.filter((r) => r.kind === 'session' && r.payload.gateway === gateway &&
+          r.payload.line === line && r.payload.at >= from && r.payload.at >= floor && r.payload.at < until);
+        sendJson(response, 200, { edge, gateway, line, requested: [from, until], floor, covered, records });
+        return;
+      }
       if (url.pathname === '/') {
         sendJson(response, 200, { stage, sources: [...sources.keys()], stages: index.stages });
         return;
